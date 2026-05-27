@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CapStack — Product One-Pager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --color-text-primary: #111827;
+  --color-text-secondary: #4B5563;
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #F3F4F6;
+  --color-border-tertiary: #E5E7EB;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+}
+body {
+  font-family: var(--font-sans);
+  background: #F9FAFB;
+  color: var(--color-text-primary);
+  padding: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+}
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+.cs-pill{display:inline-block;font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px;background:#E1F5EE;color:#085041;border:0.5px solid #9FE1CB}
+.cs-stat-val{font-size:22px;font-weight:500;color:var(--color-text-primary);margin:0 0 2px}
+.cs-stat-lbl{font-size:11px;color:var(--color-text-secondary);margin:0}
+.cs-stat-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px 14px;flex:1;min-width:0}
+.cs-row{display:flex;gap:10px;margin:0 0 10px}
+.cs-section-label{font-size:11px;font-weight:500;color:#0F6E56;letter-spacing:.04em;text-transform:uppercase;margin:0 0 6px}
+.cs-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:14px 16px}
+.cs-vs-row{display:flex;gap:0;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);overflow:hidden;margin:0 0 8px}
+.cs-vs-left{flex:1;padding:9px 12px;background:var(--color-background-secondary);font-size:12px;color:var(--color-text-secondary)}
+.cs-vs-right{flex:1;padding:9px 12px;background:#E1F5EE;font-size:12px;color:#085041;border-left:0.5px solid #9FE1CB}
+.cs-step{display:flex;align-items:flex-start;gap:10px;margin:0 0 7px}
+.cs-step-num{width:20px;height:20px;border-radius:50%;background:#E1F5EE;color:#085041;font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.cs-divider{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:12px 0}
+</style>
+</head>
+<body>
+
+<div style="padding:0">
+
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin:0 0 4px">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin:0 0 4px">
+        <span style="font-size:24px;font-weight:500;color:var(--color-text-primary)">CapStack</span>
+        <span class="cs-pill">Fintech · Consumer</span>
+        <span class="cs-pill" style="background:#E6F1FB;color:#0C447C;border-color:#85B7EB">iOS-first · Mobile</span>
+      </div>
+      <p style="font-size:13px;color:var(--color-text-secondary);margin:0;max-width:480px">Cross-account scenario planning for active retail investors. Model allocation decisions across your 401k, Roth IRA, brokerage, and HYSA — all in one place, with no assets managed.</p>
+    </div>
+    <div style="text-align:right;flex-shrink:0">
+      <div style="font-size:13px;font-weight:500;color:var(--color-text-primary)">$12 / mo</div>
+      <div style="font-size:11px;color:var(--color-text-secondary)">or $99/year</div>
+    </div>
+  </div>
+
+  <hr class="cs-divider">
+
+  <div class="cs-row">
+    <div class="cs-stat-card"><div class="cs-stat-val">52M</div><div class="cs-stat-lbl">Target active retail investors</div></div>
+    <div class="cs-stat-card"><div class="cs-stat-val">3.4</div><div class="cs-stat-lbl">Avg. accounts per investor</div></div>
+    <div class="cs-stat-card"><div class="cs-stat-val">67%</div><div class="cs-stat-lbl">Currently use spreadsheets</div></div>
+    <div class="cs-stat-card"><div class="cs-stat-val">76%</div><div class="cs-stat-lbl">WTP for scenario tool</div></div>
+    <div class="cs-stat-card"><div class="cs-stat-val">$1.4M</div><div class="cs-stat-lbl">ARR at 10K subscribers</div></div>
+  </div>
+
+  <hr class="cs-divider">
+
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);gap:10px;margin:0 0 10px">
+
+    <div class="cs-card">
+      <div class="cs-section-label">The problem</div>
+      <p style="font-size:12px;color:var(--color-text-secondary);margin:0 0 8px;line-height:1.6">Active investors with 3+ accounts can't model allocation decisions across them simultaneously. They know what they own — but not what they should do next.</p>
+      <div style="font-size:12px;color:var(--color-text-primary);line-height:1.6">
+        <div style="display:flex;gap:6px;margin:0 0 4px"><span style="color:#A32D2D;flex-shrink:0">—</span><span>4 platforms, no unified view</span></div>
+        <div style="display:flex;gap:6px;margin:0 0 4px"><span style="color:#A32D2D;flex-shrink:0">—</span><span>Spreadsheets break &amp; go stale</span></div>
+        <div style="display:flex;gap:6px"><span style="color:#A32D2D;flex-shrink:0">—</span><span>Reddit answers are generic</span></div>
+      </div>
+    </div>
+
+    <div class="cs-card">
+      <div class="cs-section-label">The solution</div>
+      <p style="font-size:12px;color:var(--color-text-secondary);margin:0 0 8px;line-height:1.6">A mobile-first thinking tool that aggregates all accounts and lets investors model what-if scenarios with tax-aware, account-specific projections.</p>
+      <div style="font-size:12px;color:var(--color-text-primary);line-height:1.6">
+        <div style="display:flex;gap:6px;margin:0 0 4px"><span style="color:#0F6E56;flex-shrink:0">+</span><span>Cross-account scenario builder</span></div>
+        <div style="display:flex;gap:6px;margin:0 0 4px"><span style="color:#0F6E56;flex-shrink:0">+</span><span>Order-of-operations engine</span></div>
+        <div style="display:flex;gap:6px"><span style="color:#0F6E56;flex-shrink:0">+</span><span>Goal milestone planner</span></div>
+      </div>
+    </div>
+
+    <div class="cs-card">
+      <div class="cs-section-label">Strategic moat</div>
+      <p style="font-size:12px;color:var(--color-text-secondary);margin:0 0 8px;line-height:1.6">Betterment and Wealthfront can't build a genuine cross-platform planner without cannibalizing their asset management revenue. CapStack can go where they cannot.</p>
+      <div style="background:#E1F5EE;border-radius:var(--border-radius-md);padding:8px 10px;border:0.5px solid #9FE1CB">
+        <div style="font-size:11px;font-weight:500;color:#085041;margin:0 0 2px">Innovator's dilemma positioning</div>
+        <div style="font-size:11px;color:#0F6E56">No incumbent can fill this gap without destroying their own model.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin:0 0 10px">
+
+    <div class="cs-card">
+      <div class="cs-section-label">Competitive positioning</div>
+      <div class="cs-vs-row">
+        <div class="cs-vs-left" style="font-weight:500;color:var(--color-text-secondary)">Competitors</div>
+        <div class="cs-vs-right" style="font-weight:500">CapStack</div>
+      </div>
+      <div class="cs-vs-row">
+        <div class="cs-vs-left">Betterment: plans within its own accounts only</div>
+        <div class="cs-vs-right">Models across all accounts you already hold</div>
+      </div>
+      <div class="cs-vs-row">
+        <div class="cs-vs-left">Empower: shows balances, pushes advisors</div>
+        <div class="cs-vs-right">No asset mgmt, no upsell — pure thinking tool</div>
+      </div>
+      <div class="cs-vs-row" style="margin:0">
+        <div class="cs-vs-left">Spreadsheet: free, stale, breaks on new accounts</div>
+        <div class="cs-vs-right">Live, mobile, saves &amp; compares scenarios</div>
+      </div>
+    </div>
+
+    <div class="cs-card">
+      <div class="cs-section-label">GTM motion</div>
+      <div class="cs-step">
+        <div class="cs-step-num">1</div>
+        <div style="font-size:12px;color:var(--color-text-primary);line-height:1.5"><span style="font-weight:500">Organic discovery</span> — user posts what-if question on r/personalfinance (17M members)</div>
+      </div>
+      <div class="cs-step">
+        <div class="cs-step-num">2</div>
+        <div style="font-size:12px;color:var(--color-text-primary);line-height:1.5"><span style="font-weight:500">Community recommendation</span> — CapStack answer surfaces; user installs free tier</div>
+      </div>
+      <div class="cs-step">
+        <div class="cs-step-num">3</div>
+        <div style="font-size:12px;color:var(--color-text-primary);line-height:1.5"><span style="font-weight:500">Scenario sharing</span> — user posts CapStack output in thread as visual answer; loop repeats</div>
+      </div>
+      <div class="cs-step" style="margin:0">
+        <div class="cs-step-num">4</div>
+        <div style="font-size:12px;color:var(--color-text-primary);line-height:1.5"><span style="font-weight:500">Free → Pro conversion</span> — scenario limit hit; user upgrades at $12/mo</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);gap:10px;margin:0 0 10px">
+    <div class="cs-card">
+      <div class="cs-section-label">North star metric</div>
+      <div style="font-size:18px;font-weight:500;color:var(--color-text-primary);margin:0 0 2px">Scenarios / user / month</div>
+      <div style="font-size:12px;color:var(--color-text-secondary);line-height:1.5">Target: 3+ by day 90. Users who hit 3 scenarios in 14 days convert to paid at 2× the rate.</div>
+    </div>
+    <div class="cs-card">
+      <div class="cs-section-label">Guardrails</div>
+      <div style="font-size:12px;color:var(--color-text-primary);line-height:1.6">
+        <div style="display:flex;gap:6px;margin:0 0 4px"><span style="color:#0F6E56;flex-shrink:0">—</span><span>Plaid error rate &lt; 8%</span></div>
+        <div style="display:flex;gap:6px;margin:0 0 4px"><span style="color:#0F6E56;flex-shrink:0">—</span><span>Misleading projection rate &lt; 2%</span></div>
+        <div style="display:flex;gap:6px"><span style="color:#0F6E56;flex-shrink:0">—</span><span>App Store rating ≥ 4.3</span></div>
+      </div>
+    </div>
+    <div class="cs-card">
+      <div class="cs-section-label">Launch targets</div>
+      <div style="font-size:12px;color:var(--color-text-primary);line-height:1.6">
+        <div style="display:flex;justify-content:space-between;margin:0 0 4px"><span>Beta users (day 60)</span><span style="font-weight:500">500</span></div>
+        <div style="display:flex;justify-content:space-between;margin:0 0 4px"><span>D30 retention</span><span style="font-weight:500">&gt; 40%</span></div>
+        <div style="display:flex;justify-content:space-between;margin:0 0 4px"><span>Free → Pro conversion</span><span style="font-weight:500">&gt; 25%</span></div>
+        <div style="display:flex;justify-content:space-between"><span>MRR at 6 months</span><span style="font-weight:500">$10K</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary)">
+    <div style="font-size:12px;color:var(--color-text-secondary)">CapStack · Product one-pager · v1.0 · 2025</div>
+    <div style="font-size:12px;color:var(--color-text-secondary)">Anish Gudipaati · PM Portfolio</div>
+  </div>
+
+</div>
+</body>
+</html>
