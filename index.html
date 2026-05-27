@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anish Gudipaati — PM Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1B2A4A;
+    --navy-deep: #111d34;
+    --navy-mid: #243558;
+    --teal: #0F7B6C;
+    --teal-light: #13a08e;
+    --teal-pale: #e6f5f3;
+    --off-white: #f7f8fa;
+    --text-primary: #1B2A4A;
+    --text-secondary: #4a5e7a;
+    --text-muted: #8399b5;
+    --border: rgba(27, 42, 74, 0.1);
+    --shadow-sm: 0 2px 8px rgba(27,42,74,0.06);
+    --shadow-md: 0 8px 32px rgba(27,42,74,0.10);
+    --shadow-lg: 0 20px 60px rgba(27,42,74,0.14);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+    padding: 80px 40px 90px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(15,123,108,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -60px;
+    width: 340px; height: 340px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(15,123,108,0.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(15,123,108,0.18);
+    border: 1px solid rgba(15,123,108,0.35);
+    color: #4fd1c0;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--teal-light);
+    border-radius: 50%;
+    animation: pulse 2s ease infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    color: #fff;
+    line-height: 1.12;
+    margin-bottom: 22px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: #4fd1c0;
+  }
+
+  .hero-sub {
+    font-size: 16.5px;
+    color: rgba(255,255,255,0.62);
+    line-height: 1.65;
+    max-width: 560px;
+    font-weight: 300;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 32px;
+    margin-top: 40px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .hero-meta-label {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.38);
+  }
+
+  .hero-meta-value {
+    font-size: 14.5px;
+    color: rgba(255,255,255,0.75);
+    font-weight: 400;
+  }
+
+  .hero-meta-divider {
+    width: 1px;
+    background: rgba(255,255,255,0.1);
+    align-self: stretch;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 72px 32px 32px;
+  }
+
+  .section-header {
+    margin-bottom: 48px;
+  }
+
+  .section-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    color: var(--navy);
+    line-height: 1.2;
+  }
+
+  /* ── CARDS ── */
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+  }
+
+  .card:nth-child(1) { animation-delay: 0.05s; }
+  .card:nth-child(2) { animation-delay: 0.12s; }
+  .card:nth-child(3) { animation-delay: 0.19s; }
+
+  .card-accent {
+    height: 4px;
+    background: linear-gradient(90deg, var(--teal) 0%, var(--teal-light) 100%);
+  }
+
+  .card-body {
+    padding: 32px 36px 28px;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .card-domain {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    background: var(--teal-pale);
+    border: 1px solid rgba(15,123,108,0.18);
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  .card-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.65rem;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 6px;
+    margin-top: 10px;
+  }
+
+  .card-tagline {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+
+  .card-description {
+    font-size: 14.5px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .card-stats {
+    display: flex;
+    gap: 0;
+    margin: 24px 0;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .card-stat {
+    flex: 1;
+    padding: 14px 16px;
+    border-right: 1px solid var(--border);
+    background: var(--off-white);
+  }
+
+  .card-stat:last-child { border-right: none; }
+
+  .card-stat-value {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--navy);
+    display: block;
+    line-height: 1.2;
+  }
+
+  .card-stat-label {
+    font-size: 10.5px;
+    color: var(--text-muted);
+    margin-top: 3px;
+    display: block;
+    font-weight: 500;
+  }
+
+  .card-north-star {
+    background: linear-gradient(135deg, rgba(27,42,74,0.04) 0%, rgba(15,123,108,0.06) 100%);
+    border: 1px solid rgba(15,123,108,0.15);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin: 18px 0 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .ns-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .ns-text {
+    font-size: 13px;
+    color: var(--navy);
+    line-height: 1.55;
+    font-weight: 400;
+  }
+
+  .ns-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 3px;
+    display: block;
+  }
+
+  .card-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--navy);
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background: var(--navy-mid);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(27,42,74,0.22);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--navy);
+    border: 1.5px solid rgba(27,42,74,0.22);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--teal);
+    color: var(--teal);
+    background: var(--teal-pale);
+  }
+
+  .btn svg {
+    width: 14px; height: 14px;
+    stroke: currentColor;
+    flex-shrink: 0;
+  }
+
+  /* ── DELIVERABLES ROW ── */
+  .card-deliverables {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+
+  .chip {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--navy-deep);
+    margin-top: 80px;
+    padding: 40px 32px;
+    text-align: center;
+  }
+
+  .footer-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .footer-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 24px;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .footer-link {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .footer-link:hover { color: #4fd1c0; }
+
+  .divider-line {
+    width: 1px;
+    background: rgba(255,255,255,0.12);
+  }
+
+  /* ── ANIMATION ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .hero { padding: 56px 24px 64px; }
+    .hero-meta { flex-direction: column; gap: 16px; }
+    .hero-meta-divider { display: none; }
+    .section { padding: 56px 20px 20px; }
+    .card-body { padding: 24px 22px 20px; }
+    .card-stats { flex-direction: column; }
+    .card-stat { border-right: none; border-bottom: 1px solid var(--border); }
+    .card-stat:last-child { border-bottom: none; }
+    .card-header { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">PM Portfolio · 2025</div>
+    <h1>Product thinking<br>across <em>three verticals.</em></h1>
+    <p class="hero-sub">Three end-to-end case studies — each with discovery, PRD, competitive positioning, metrics, wireframes, and a one-pager.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Author</span>
+        <span class="hero-meta-value">Anish Gudipaati</span>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">School</span>
+        <span class="hero-meta-value">Vanderbilt University · Economics + CS</span>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Experience</span>
+        <span class="hero-meta-value">VC · Product Consulting · Agtech GTM</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- CASE STUDIES -->
+<main>
+<section class="section">
+  <div class="section-header">
+    <p class="section-label">Case Studies</p>
+    <h2 class="section-title">Three complete product builds</h2>
+  </div>
+
+  <div class="cards">
+
+    <!-- CARD 1: SiteFlow -->
+    <article class="card">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-domain">Healthtech</span>
+        </div>
+        <h3 class="card-title">SiteFlow</h3>
+        <p class="card-tagline">Mobile-first workflow automation for Clinical Research Coordinators</p>
+        <p class="card-description">
+          Independent clinical research sites run on fragmented paper trails, sponsor portals, and manual scheduling. SiteFlow is a mobile-first platform built for the ~20,000 CRCs at 9,700 US independent sites — closing the gap Veeva SiteVault deliberately leaves open (sponsor-centric, not site-centric).
+        </p>
+        <div class="card-stats">
+          <div class="card-stat">
+            <span class="card-stat-value">9,700</span>
+            <span class="card-stat-label">US Independent Sites</span>
+          </div>
+          <div class="card-stat">
+            <span class="card-stat-value">$199/mo</span>
+            <span class="card-stat-label">Per-Site Pricing</span>
+          </div>
+          <div class="card-stat">
+            <span class="card-stat-value">$11.6M</span>
+            <span class="card-stat-label">ARR @ 5% Penetration</span>
+          </div>
+        </div>
+        <div class="card-north-star">
+          <span class="ns-icon">⭐</span>
+          <div>
+            <span class="ns-label">North Star Metric</span>
+            <span class="ns-text">Weekly active CRC sessions per site — target ≥4 by Day 90</span>
+          </div>
+        </div>
+        <div class="card-deliverables">
+          <span class="chip">Customer Discovery</span>
+          <span class="chip">PRD v1</span>
+          <span class="chip">Competitive Map</span>
+          <span class="chip">One-Pager</span>
+          <span class="chip">Metrics Framework</span>
+          <span class="chip">Mobile Wireframes</span>
+        </div>
+        <div class="card-links">
+          <a href="siteflow-onepager.html" class="btn btn-primary" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            One-Pager
+          </a>
+          <a href="siteflow-prd.docx" class="btn btn-outline" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Full PRD
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- CARD 2: CapStack -->
+    <article class="card">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-domain">Fintech</span>
+        </div>
+        <h3 class="card-title">CapStack</h3>
+        <p class="card-tagline">Mobile-first cross-account scenario planning for active retail investors</p>
+        <p class="card-description">
+          Active retail investors (22–35) hold 3+ account types with no unified view for scenario planning. CapStack provides a cross-platform modeling tool that incumbents like Betterment and Wealthfront structurally cannot build — their AUM-based revenue model means they can never go genuinely platform-agnostic.
+        </p>
+        <div class="card-stats">
+          <div class="card-stat">
+            <span class="card-stat-value">52M</span>
+            <span class="card-stat-label">Target Users</span>
+          </div>
+          <div class="card-stat">
+            <span class="card-stat-value">$12/mo</span>
+            <span class="card-stat-label">Pro Tier</span>
+          </div>
+          <div class="card-stat">
+            <span class="card-stat-value">$1.4M</span>
+            <span class="card-stat-label">ARR @ 10K Subscribers</span>
+          </div>
+        </div>
+        <div class="card-north-star">
+          <span class="ns-icon">⭐</span>
+          <div>
+            <span class="ns-label">North Star Metric</span>
+            <span class="ns-text">Scenarios run per active user per month — target 3+ by Day 90</span>
+          </div>
+        </div>
+        <div class="card-deliverables">
+          <span class="chip">Customer Discovery</span>
+          <span class="chip">PRD v1</span>
+          <span class="chip">Competitive Map</span>
+          <span class="chip">One-Pager</span>
+          <span class="chip">Metrics Framework</span>
+          <span class="chip">Mobile Wireframes</span>
+        </div>
+        <div class="card-links">
+          <a href="capstack-onepager.html" class="btn btn-primary" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            One-Pager
+          </a>
+          <a href="capstack-prd.docx" class="btn btn-outline" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Full PRD
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- CARD 3: DraftDesk -->
+    <article class="card">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-domain">AI Productivity</span>
+        </div>
+        <h3 class="card-title">DraftDesk</h3>
+        <p class="card-tagline">AI writing co-pilot for non-technical knowledge workers — structured, context-aware drafts</p>
+        <p class="card-description">
+          Knowledge workers spend 4–6 hours per week on first drafts of QBRs, RFP responses, campaign briefs, and escalation summaries. DraftDesk injects CRM and call-transcript context to produce structured, workflow-ready output. Copilot and Gemini must stay horizontal; Notion AI is a doc tool, not a workflow tool; RFPIO is enterprise-priced — leaving DraftDesk as the only structured workflow tool at per-seat pricing anyone can afford.
+        </p>
+        <div class="card-stats">
+          <div class="card-stat">
+            <span class="card-stat-value">70M+</span>
+            <span class="card-stat-label">US Knowledge Workers</span>
+          </div>
+          <div class="card-stat">
+            <span class="card-stat-value">$18/seat</span>
+            <span class="card-stat-label">Pro · $14/seat Team</span>
+          </div>
+          <div class="card-stat">
+            <span class="card-stat-value">$1.6M</span>
+            <span class="card-stat-label">ARR @ 7,500 Seats</span>
+          </div>
+        </div>
+        <div class="card-north-star">
+          <span class="ns-icon">⭐</span>
+          <div>
+            <span class="ns-label">North Star Metric</span>
+            <span class="ns-text">Drafts completed per active user per week — target 3+ by Day 60</span>
+          </div>
+        </div>
+        <div class="card-deliverables">
+          <span class="chip">Customer Discovery</span>
+          <span class="chip">PRD v1</span>
+          <span class="chip">Competitive Map</span>
+          <span class="chip">One-Pager</span>
+          <span class="chip">Metrics Framework</span>
+          <span class="chip">Mobile Wireframes</span>
+        </div>
+        <div class="card-links">
+          <a href="draftdesk-onepager.html" class="btn btn-primary" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            One-Pager
+          </a>
+          <a href="draftdesk-prd.docx" class="btn btn-outline" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Full PRD
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p class="footer-name">Anish Gudipaati</p>
+  <p class="footer-sub">Vanderbilt University · Economics + CS Minor · Class of 2028</p>
+  <div class="footer-links">
+    <a href="mailto:anish.gudipaati@vanderbilt.edu" class="footer-link">Email</a>
+    <div class="divider-line"></div>
+    <a href="https://linkedin.com/in/anishgudipaati" class="footer-link" target="_blank">LinkedIn</a>
+    <div class="divider-line"></div>
+    <a href="https://github.com/anishgudipaati" class="footer-link" target="_blank">GitHub</a>
+  </div>
+</footer>
+
+</body>
+</html>
